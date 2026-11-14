@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Special Surprise For Mummy ❤️</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  
+  <!-- Google Fonts: Handwritten & Elegant Aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@500;700&family=Nunito:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,500..800;1,500..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Canvas Confetti Overlay -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Floating Hearts & Sparkles Ambient Container -->
+  <div id="ambient-particles" aria-hidden="true"></div>
+
+  <!-- Top Floating Navigation Stepper (Visible after welcome) -->
+  <header id="top-stepper" class="top-stepper hidden">
+    <div class="stepper-inner">
+      <button type="button" class="stepper-home-btn" onclick="goToPage('page-welcome')" title="Wapas Home Chalo">
+        🌸 Home
+      </button>
+      <div class="stepper-pills">
+        <button type="button" class="step-pill" data-target="page-memories" onclick="goToPage('page-memories')">
+          <span class="step-num">1</span>
+          <span class="step-text">Yaadein 📷</span>
+        </button>
+        <button type="button" class="step-pill" data-target="page-letter" onclick="goToPage('page-letter')">
+          <span class="step-num">2</span>
+          <span class="step-text">Letter 💌</span>
+        </button>
+        <button type="button" class="step-pill" data-target="page-reasons" onclick="goToPage('page-reasons')">
+          <span class="step-num">3</span>
+          <span class="step-text">Kyun Special Ho 💖</span>
+        </button>
+        <button type="button" class="step-pill" data-target="page-final" onclick="goToPage('page-final')">
+          <span class="step-num">4</span>
+          <span class="step-text">Surprise 🎉</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Viewport Container -->
+  <main class="app-viewport">
+
+    <!-- ==========================================
+         PAGE 1: WELCOME SURPRISE
+         ========================================== -->
+    <section id="page-welcome" class="page-section active">
+      <div class="scrap-sticker sticker-flower-tl">🌸</div>
+      <div class="scrap-sticker sticker-bow-tr">🎀</div>
+      <div class="scrap-sticker sticker-butterfly-bl">🦋</div>
+      <div class="scrap-stamp stamp-br">💌 100% LOVE</div>
+
+      <div class="scrap-card welcome-card">
+        <div class="washi-tape tape-top-left" style="background-color: #F8BBD0;"></div>
+        <div class="washi-tape tape-top-right" style="background-color: #BDE0FE;"></div>
+
+        <div class="badge-pill">
+          <span>✨ Made With Infinite Love For Mummy ✨</span>
+        </div>
+
+        <h1 class="main-title">
+          Hey Mummy! <span class="heart-beat">❤️</span>
+        </h1>
+
+        <p class="sub-title">
+          Aapke liye maine kuch special banaya hai...
+        </p>
+
+        <!-- Polaroid Preview of Mummy -->
+        <div class="welcome-polaroid">
+          <div class="washi-tape tape-center-top" style="background-color: #EDE7F6;"></div>
+          <div class="polaroid-photo-frame">
+            <img id="welcome-mom-img" src="" alt="Mummy ki pyari photo" loading="eager">
+          </div>
+          <p class="polaroid-handwritten-note">Duniya ki sabse pyari Mummy 🌸</p>
+        </div>
+
+        <!-- Question & Buttons -->
+        <div class="question-container">
+          <h2 class="question-title">Do you want a little surprise? 🎁</h2>
+          <p class="question-hinglish-hint">(Mummy, please ek baar click karke dekho!)</p>
+        </div>
+
+        <div class="button-group">
+          <button type="button" class="btn btn-yes pulse-glow" id="btn-welcome-yes" onclick="handleWelcomeYes()">
+            YES!! ❤️
+          </button>
+          <button type="button" class="btn btn-no" id="btn-welcome-no" onclick="goToPage('page-funny-no')">
+            NO!! 🥺
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 2: FUNNY NO PAGE
+         ========================================== -->
+    <section id="page-funny-no" class="page-section">
+      <div class="scrap-card funny-card">
+        <div class="washi-tape tape-center-top" style="background-color: #BDE0FE;"></div>
+
+        <!-- Cute Pleading Bear Mascot Illustration -->
+        <div class="pleading-illustration">
+          <div class="mascot-bear">
+            <div class="bear-ears">
+              <span class="bear-ear left"></span>
+              <span class="bear-ear right"></span>
+            </div>
+            <div class="bear-face">
+              <div class="bear-eyes">
+                <div class="bear-eye">
+                  <div class="eye-pupil"></div>
+                  <div class="eye-sparkle"></div>
+                  <span class="tear tear-left">💧</span>
+                </div>
+                <div class="bear-eye">
+                  <div class="eye-pupil"></div>
+                  <div class="eye-sparkle"></div>
+                  <span class="tear tear-right">💧</span>
+                </div>
+              </div>
+              <div class="bear-cheeks">
+                <span class="cheek"></span>
+                <span class="cheek"></span>
+              </div>
+              <div class="bear-mouth">﹏</div>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="funny-heading">
+          NOOOOO!!! Phir se socho! 🥺💔
+        </h1>
+
+        <p class="funny-main-msg">
+          Are you sure Mummy? Itni mehnat se banaya hai aapke liye!
+        </p>
+
+        <p class="funny-sub-msg">
+          "Mummy, please apne bacche ko aise mana mat karo na! Ek baar YES bol kar toh dekho... sach me bohot accha lagega! 🌸"
+        </p>
+
+        <div style="margin-top: 24px;">
+          <button type="button" class="btn btn-yes pulse-glow" onclick="goToPage('page-welcome')">
+            <span>Achha chalo, wapas chalte hain ❤️</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 3: OUR BEAUTIFUL MEMORIES
+         ========================================== -->
+    <section id="page-memories" class="page-section">
+      <div class="scrap-sticker sticker-flower-tl">🌸</div>
+      <div class="scrap-sticker sticker-bow-tr">🎀</div>
+
+      <div class="section-heading-box">
+        <div class="badge-pill">
+          <span>📸 Chapter 1: Yaadon Ka Album</span>
+        </div>
+        <h1 class="section-title">
+          Hamari Kuch Pyari Yaadein 💗
+        </h1>
+        <p class="section-subtitle">
+          Aapke saath bitaya hua har pal anmol hai. Kisi bhi photo par click karein aur use bada karke dekhein!
+        </p>
+      </div>
+
+      <!-- Scrapbook Grid populated by script.js -->
+      <div class="memories-grid" id="memories-grid-container">
+        <!-- Rendered via script.js -->
+      </div>
+
+      <!-- Section Navigation Buttons -->
+      <div class="nav-footer">
+        <button type="button" class="btn-nav btn-nav-back" onclick="goToPage('page-welcome')">
+          ← Wapas Welcome
+        </button>
+        <button type="button" class="btn-nav btn-nav-next" onclick="goToPage('page-letter')">
+          Letter Padhein 💌 →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 4: A LETTER FOR MUMMY
+         ========================================== -->
+    <section id="page-letter" class="page-section">
+      <div class="scrap-sticker sticker-flower-tl">🌷</div>
+      <div class="scrap-sticker sticker-bow-tr">🎀</div>
+
+      <div class="section-heading-box">
+        <div class="badge-pill">
+          <span>💌 Chapter 2: Dil Se Dil Tak</span>
+        </div>
+        <h1 class="section-title">
+          Ek Chhota Sa Letter Aapke Naam Mummy 💌
+        </h1>
+        <p class="section-subtitle">
+          Kuch baatein jo shayad main har roz bol nahi paati, aaj dil se likhi hain...
+        </p>
+      </div>
+
+      <!-- Interactive Envelope & Letter Container -->
+      <div class="letter-interaction-area">
+        <!-- Sealed Envelope (visible initially) -->
+        <div id="envelope-cover" class="envelope-container" onclick="openLetter()">
+          <div class="envelope-stamp">AIR MAIL 💖</div>
+          <div class="envelope-top-flap"></div>
+          <div class="wax-seal-heart pulse-glow" title="Letter kholne ke liye tap karein!">
+            ❤️
+          </div>
+          <div class="envelope-content-preview">
+            <p class="envelope-to-text">To: Duniya Ki Sabse Pyari Mummy 🌸</p>
+            <p class="envelope-open-hint">Tap the heart to unseal your letter</p>
+          </div>
+        </div>
+
+        <!-- Unfolded Letter Paper (revealed after click) -->
+        <article id="letter-sheet" class="paper-letter-card hidden">
+          <div class="washi-tape tape-center-top" style="background-color: #F8BBD0;"></div>
+          
+          <div class="letter-meta-row">
+            <span class="letter-stamp-badge">POSTAGE: ANMOL PYAAR 🌸</span>
+            <span class="letter-date-text">Dil Se Likha Hua ❤️</span>
+          </div>
+
+          <div class="letter-text-body">
+            <p class="letter-salutation">Dear Mummy,</p>
+
+            <p class="letter-p">
+              Pata nahi kaise express karun ki aap mere liye kitni special ho.
+            </p>
+
+            <p class="letter-p">
+              Aapne mere liye jo kuch bhi kiya hai, uske liye shayad main kabhi properly thank you nahi bol paungi.
+            </p>
+
+            <p class="letter-p">
+              Aapka har chhota effort, har sacrifice, har smile aur har baar mera saath dena mere liye bahut मायने rakhta hai.
+            </p>
+
+            <p class="letter-p">
+              Aap meri strength ho, meri biggest supporter ho aur meri life ka sabse beautiful part ho.
+            </p>
+
+            <p class="letter-p">
+              Ho sakta hai main hamesha apni feelings express na kar paun, lekin iska matlab ye nahi ki main aapse kam pyaar karti hoon.
+            </p>
+
+            <p class="letter-p">
+              Main bas chahti hoon ki aap hamesha khush raho aur aapko bhi utni hi happiness mile jitni aap meri life mein laati ho.
+            </p>
+
+            <p class="letter-p letter-highlight-quote">
+              Thank you for everything, Mummy.
+            </p>
+
+            <p class="letter-p">
+              Aap duniya ki best mummy ho.
+            </p>
+
+            <p class="letter-p letter-love-big">
+              I love you so much! ❤️
+            </p>
+
+            <div class="letter-sign-block">
+              <p>Forever your little girl,</p>
+              <p class="letter-hand-sign">Aapka Chhota Baccha 🌸</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-footer">
+        <button type="button" class="btn-nav btn-nav-back" onclick="goToPage('page-memories')">
+          ← Hamari Yaadein
+        </button>
+        <button type="button" class="btn-nav btn-nav-next" onclick="goToPage('page-reasons')">
+          Aap Kyun Special Ho? 💖 →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 5: WHY YOU ARE SPECIAL
+         ========================================== -->
+    <section id="page-reasons" class="page-section">
+      <div class="scrap-sticker sticker-flower-tl">🌸</div>
+      <div class="scrap-sticker sticker-butterfly-tr">🦋</div>
+
+      <div class="section-heading-box">
+        <div class="badge-pill">
+          <span>💖 Chapter 3: Anmol Khasiyatein</span>
+        </div>
+        <h1 class="section-title">
+          Aap Mere Liye Itni Special Kyun Ho? ❤️
+        </h1>
+        <p class="section-subtitle">
+          Aapki har baat anokhi hai, lekin ye 6 cheezein mere dil ke sabse kareeb hain:
+        </p>
+      </div>
+
+      <!-- 6 Interactive Special Reasons Cards -->
+      <div class="reasons-grid-container" id="reasons-grid-container">
+        <!-- Rendered via script.js -->
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-footer">
+        <button type="button" class="btn-nav btn-nav-back" onclick="goToPage('page-letter')">
+          ← Chhota Sa Letter
+        </button>
+        <button type="button" class="btn-nav btn-nav-next" onclick="goToPage('page-final')">
+          Final Surprise Dekhein! 🎉 →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 6: FINAL PHOTO GALLERY & SURPRISE
+         ========================================== -->
+    <section id="page-final" class="page-section">
+      <div class="scrap-sticker sticker-flower-tl">🌸</div>
+      <div class="scrap-sticker sticker-bow-tr">🎀</div>
+
+      <div class="section-heading-box">
+        <div class="badge-pill">
+          <span>🌟 Chapter 4: Mera Sabse Bada Aashirwad</span>
+        </div>
+        <h1 class="section-title">
+          My Forever Favourite Person ❤️
+        </h1>
+        <p class="section-subtitle">
+          Hamari sabse khubsoorat yaadon ka ek pyara sa collage!
+        </p>
+      </div>
+
+      <!-- Final Scrapbook Collage -->
+      <div class="final-collage-grid" id="final-collage-container">
+        <!-- Populated via script.js -->
+      </div>
+
+      <!-- Final Emotional Tribute Card -->
+      <div class="scrap-card final-tribute-card">
+        <div class="washi-tape tape-center-top" style="background-color: #BDE0FE;"></div>
+        <div class="tribute-bow">🎀</div>
+
+        <h2 class="tribute-title">
+          Mummy, Aap Meri Duniya Ho 🌸
+        </h2>
+
+        <p class="tribute-emotional-quote">
+          "Mummy, agar mujhe har lifetime mein apni mummy choose karne ka chance mile, toh main har baar aapko hi choose karungi."
+        </p>
+
+        <p class="tribute-middle-line">
+          Thank you meri life ka sabse beautiful part banne ke liye.
+        </p>
+
+        <p class="tribute-favourite">
+          Aap meri forever favourite person ho.
+        </p>
+
+        <p class="tribute-big-love">
+          I LOVE YOU MUMMY! ❤️
+        </p>
+
+        <!-- Celebration Action Buttons -->
+        <div class="final-actions-row">
+          <button type="button" class="btn btn-yes pulse-glow" onclick="triggerCelebrationConfetti()">
+            <span>Celebrate Our Love! 🎉</span>
+          </button>
+          
+          <button type="button" class="btn btn-secret" onclick="openSecretModal()">
+            <span>Secret Surprise! 🤫💌</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-footer">
+        <button type="button" class="btn-nav btn-nav-back" onclick="goToPage('page-reasons')">
+          ← Reasons
+        </button>
+        <button type="button" class="btn-nav btn-nav-restart" onclick="restartJourney()">
+          <span>Shuru Se Phir Dekhein 💖</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       PHOTO LIGHTBOX MODAL
+       ========================================== -->
+  <div id="photo-lightbox" class="lightbox-overlay hidden" onclick="closeLightbox(event)">
+    <div class="lightbox-modal" onclick="event.stopPropagation()">
+      <div class="washi-tape tape-center-top" id="lightbox-tape" style="background-color: #F8BBD0;"></div>
+
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" title="Band karein (Esc)">
+        ✕
+      </button>
+
+      <div class="lightbox-image-wrapper">
+        <img id="lightbox-img" src="" alt="Enlarged Mummy memory">
+      </div>
+
+      <div class="lightbox-info">
+        <span class="lightbox-tag" id="lightbox-tag">Khaas Pal 🌸</span>
+        <h3 class="lightbox-title" id="lightbox-title">Title</h3>
+        <p class="lightbox-caption" id="lightbox-caption">Caption</p>
+      </div>
+
+      <div class="lightbox-nav-buttons">
+        <button type="button" class="lightbox-nav-btn" id="lightbox-prev" onclick="lightboxPrev()">
+          ← Pichhli Photo
+        </button>
+        <button type="button" class="lightbox-nav-btn" id="lightbox-next" onclick="lightboxNext()">
+          Agli Photo →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECRET SURPRISE POPUP MODAL
+       ========================================== -->
+  <div id="secret-modal" class="lightbox-overlay hidden" onclick="closeSecretModal(event)">
+    <div class="lightbox-modal secret-modal-content" onclick="event.stopPropagation()">
+      <div class="washi-tape tape-center-top" style="background-color: #FF80AB;"></div>
+      
+      <button type="button" class="lightbox-close-btn" onclick="closeSecretModal()" title="Close">
+        ✕
+      </button>
+
+      <div class="secret-modal-body">
+        <span class="secret-badge">SECRET NOTE JUST FOR YOU 🤫💕</span>
+        <h2 class="secret-title">Ek Chhoti Si Baat Aur... ❤️</h2>
+        <p class="secret-text">
+          "Mummy, chahe main kitni bhi badi ho jaun, aapki ungli pakad kar chalne wala sukoon duniya ke kisi kone mein nahi mil sakta.
+          Aapki godi meri sabse safe jagah hai, aur aapka aashirwad meri sabse badi taqat hai.
+          Bas hamesha aise hi muskurati rehna! Love you to the moon and back!"
+        </p>
+        <div class="secret-seal">
+          <span>Hamesha Aapki Little Girl 🌸❤️</span>
+        </div>
+        <button type="button" class="btn btn-yes" style="margin-top: 18px;" onclick="closeSecretModal()">
+          Bohot Saara Pyaar! 💖
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FLOATING AUDIO MUSIC CONTROLLER
+       ========================================== -->
+  <div class="floating-music-bar" id="music-bar">
+    <button type="button" class="music-toggle-btn" id="music-toggle" onclick="toggleMusic()" title="Play / Pause soothing lullaby for Mummy">
+      <span class="music-icon-disc" id="music-disc">🎵</span>
+      <span class="music-label-text" id="music-label">Mummy's Melody ♪</span>
+    </button>
+    <button type="button" class="music-mute-btn hidden" id="music-mute" onclick="toggleMute()" title="Mute / Unmute">
+      🔊
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
