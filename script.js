@@ -647,12 +647,34 @@ function initAmbientParticles() {
 }
 
 // ========================================================
-// 11. INITIALIZATION ON DOM READY
+// 11. INITIALIZATION & GLOBAL WINDOW BINDINGS
 // ========================================================
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   renderWelcomeMomPhoto();
   renderMemoriesGrid();
   renderSpecialReasons();
   renderFinalCollage();
   initAmbientParticles();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
+
+// Expose handlers to window for inline onclick attributes (works in both module & non-module modes)
+window.goToPage = goToPage;
+window.handleWelcomeYes = handleWelcomeYes;
+window.restartJourney = restartJourney;
+window.openLetter = openLetter;
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+window.lightboxPrev = lightboxPrev;
+window.lightboxNext = lightboxNext;
+window.openSecretModal = openSecretModal;
+window.closeSecretModal = closeSecretModal;
+window.toggleMusic = toggleMusic;
+window.toggleMute = toggleMute;
+window.triggerCelebrationConfetti = triggerCelebrationConfetti;
+
